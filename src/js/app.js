@@ -1,8 +1,4 @@
-import GamePlay from './engine/gamePlay';
+import GoblinGame from './goblinGame';
 
-export default function app() {
-  const gamePlay = new GamePlay();
-  gamePlay.init();
-}
-
-app();
+const game = new GoblinGame(4);
+game.startGame();

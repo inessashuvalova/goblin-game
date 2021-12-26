@@ -22,7 +22,7 @@ module.exports = {
                 test: /\.html$/,
                 use: [
                     {
-                        loader: 'raw-loader',
+                        loader: 'html-loader',
                     },
                 ],
             },
@@ -33,12 +33,14 @@ module.exports = {
                 ],
             },
             {
-                test: /\.(png|jpg|gif)$/i,
+                test: /\.(gif|png|jpe?g|svg)$/i,
                 use: [
+                    'file-loader',
                     {
-                        loader: 'url-loader',
+                        loader: 'image-webpack-loader',
                         options: {
-                            limit: true,
+                            bypassOnDebug: true, // webpack@1.x
+                            disable: true, // webpack@2.x and newer
                         },
                     },
                 ],
