@@ -8,6 +8,7 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "test": "jest",
+    "testEnvironment": "jsdom",
     "coverage": "jest --coverage",
     "preshow:coverage": "yarn run coverage",
     "show:coverage": "live-server coverage/lcov-report",
@@ -47,5 +48,10 @@
     "webpack-cli": "^4.9.2",
     "webpack-dev-server": "^4.7.4",
     "webpack-merge": "^5.8.0"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js"
+    }
   }
 }
